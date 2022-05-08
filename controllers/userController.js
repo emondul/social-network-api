@@ -21,6 +21,13 @@ module.exports = {
           return res.status(500).json(err);
         });
     },
+     /*
+    JSON body format:
+    {
+      "username": ""
+      "email": ""
+    }
+    */
     createUser(req, res) {
         User.create(req.body)
           .then((user) => res.json(user))
